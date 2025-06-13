@@ -1,4 +1,4 @@
-name,photo
-Mahendra singh Dhoni,Dhoni.png
-Ravindra Jadeja,jadeja.png
-Virat Kohli,kohli.png
+name,photo,title, location
+Mahendra singh Dhoni,Dhoni.png,software developer,Delhi
+Ravindra Jadeja,jadeja.png,Senior Developer,Rajkota
+Virat Kohli,kohli.png,Designer,Delhi

@@ -27,7 +27,7 @@ def draw_id_card(c, name, photo_path):
         img_reader = ImageReader(img)
         c.drawImage(img_reader, photo_x, photo_y, width=photo_w, height=photo_h, mask='auto')
     else:
-        print(f"⚠ Photo not found: {photo_path}")
+        print(f"Photo not found: {photo_path}")
     c.setFont("Helvetica-Bold", 12)
     c.setFillColorRGB(1, 1, 1)
     c.drawCentredString(PAGE_WIDTH / 2,8* mm, name)
@@ -41,6 +41,8 @@ with open(CSV_PATH, newline='', encoding='utf-8') as csvfile:
     for row in reader:
         name = row['name'].strip()
         photo = row['photo'].strip()
+        title = row.get('title', '').strip()
+        location = row.get('location', '').strip()
         photo_path = os.path.join(PHOTO_DIR, photo)
 
         c.setPageSize((PAGE_WIDTH, PAGE_HEIGHT))
@@ -48,4 +50,4 @@ with open(CSV_PATH, newline='', encoding='utf-8') as csvfile:
         c.showPage()
 
 c.save()
-print(f"✅ All ID cards saved to {OUTPUT_PDF}")
+print(f" All ID cards saved to {OUTPUT_PDF}")
